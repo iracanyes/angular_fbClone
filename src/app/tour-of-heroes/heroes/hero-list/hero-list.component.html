@@ -1,0 +1,74 @@
+<!--
+A template looks like regular HTML, except that it also contains Angular template syntax, which alters the HTML based on your application's logic and the state of application and DOM data.
+Your template can use:
+  - Data binding: to coordinate the application and DOM data
+  - Pipes: to transform data before it's displayed
+  - Directives: to apply application logic to what gets displayed
+This template syntax tell angular how to render HTML to the screen using program logic and data:
+  - *ngFor : directive that tells Angular to iterate over a list
+  - {{ hero.name }}, [hero] : Bind program data to and from the DOM
+  - (click) : Respond to user input
+  - <app-crisis-detail> : Tag that represent a new component, HeroDetailComponent
+-->
+<!--
+    DIRECTIVES:
+    A component is technically a directive.
+    However, components are so distinctive and central to Angular applications that Angular defines the @Component() decorator,
+    which extends the @Directive() decorator with template-oriented features.
+    There are two other kinds of directives: structural and attribute.
+    you can define your own using the @Directive() decorator.
+    Just as for components, the metadata for a directive associates the decorated class with a selector element that you use to insert it into HTML.
+    In templates, directives typically appear within an element tag as attributes, either by name or as the target of an assignment or a binding.
+  -->
+<main>
+  <h2>My heroes</h2>
+
+  <p>
+    <i>Select a hero from the list to see details</i>
+  </p>
+  <ul class="heroes">
+    <!-- Directives
+      *ngFor: tells Angular to stamp out one <li> per hero in the heroes list.
+    -->
+    <!--
+      EVENT BINDING:
+      (click) : calls 'selectHero' method when the user click a hero's name
+      and pass to the method a hero's object attached to this <li> element
+    -->
+    <li
+      *ngFor="let hero of heroes$ | async"
+      [class.selected]="hero.id === selectedId"
+    >
+      <!--
+        INTERPOLATION:
+        {{ hero.name }} : displays the component's 'hero.name' property value within the <li> element
+      -->
+      <a [routerLink]="['/tour-of-heroes/hero', hero.id]">
+        <span class="badge">{{ hero.id }}</span>
+        {{ hero.name }}
+      </a>
+
+    </li>
+  </ul>
+
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="/sidekicks"
+  >
+    Go to sidekicks
+  </button>
+  <!-- Directives
+    *ngIf: tells Angular to include crisis-detail Component only if a selected hero exists.
+  -->
+  <!-- PROPERTY BINDING:
+    [hero] : passes the value of selectedHero from the parent HeroListComponent to the "hero" property of the child HeroDetailComponent
+
+  <app-crisis-detail
+    *ngIf="selectedHero"
+    [hero]="selectedHero"
+  >
+  </app-crisis-detail>
+   -->
+</main>
+

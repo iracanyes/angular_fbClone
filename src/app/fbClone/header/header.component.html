@@ -1,0 +1,147 @@
+<mat-toolbar>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-icon
+      class="main-logo"
+    >
+      facebook
+    </mat-icon>
+    <!-- Search input with search icon to show input -->
+    <button
+      mat-mini-fab
+      color="primary"
+      aria-hidden="false"
+      aria-label="Open search box"
+    >
+      <mat-icon class="search-icon">search</mat-icon>
+    </button>
+    <form class="" action="">
+      <mat-form-field class="search-field">
+        <input
+          matInput
+          type="text"
+          placeholder="Rechercher sur Facebook"
+          value=""
+        >
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div class="div-divider"></div>
+  <!-- Menu (home, watch, marketplace, groupes, plus) -->
+  <div class="menu">
+    <button
+      mat-icon-button
+      matTooltip="Home"
+      aria-hidden="false"
+      aria-label="Facebook homepage"
+    >
+      <a href="">
+        <mat-icon class="material-icons-round">
+          home
+        </mat-icon>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Watch"
+      aria-hidden="false"
+      aria-label="Watch videos"
+    >
+      <a href="">
+        <mat-icon
+          matBadge="7"
+          matBadgeColor="warn"
+        >
+          ondemand_video
+        </mat-icon>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Marketplace"
+      aria-label="Marketplace"
+    >
+      <a href="">
+        <mat-icon>storefront</mat-icon>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Groups"
+      aria-label="Groups"
+    >
+      <a href="">
+        <mat-icon>groups</mat-icon>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Gaming"
+      aria-label="Gaming"
+    >
+      <a href="">
+        <mat-icon>sports_esports</mat-icon>
+      </a>
+    </button>
+  </div>
+  <div class="div-divider"></div>
+  <!-- Right icon Menu (create, messenger, notifications, plus)  -->
+  <div
+    fxLayout="row"
+    class="right-menu"
+  >
+    <button
+      mat-button
+      fxLayoutAlign="center center"
+      color="primary"
+      aria-label="Facebook homepage"
+    >
+      <a href="" fxLayout="row">
+        <img src="https://loremflickr.com/320/240/people" />
+        <span class="">{{ username }}</span>
+      </a>
+    </button>
+    <button
+      mat-mini-fab
+      matTooltip="Expand more"
+      aria-label="More options"
+    >
+      <a href="">
+        <mat-icon
+          matBadge="7"
+          matBadgeColor="accent"
+        >
+          ondemand_video
+        </mat-icon>
+      </a>
+    </button>
+    <button
+      mat-mini-fab
+      matTooltip="Expand more"
+      aria-label="More options"
+    >
+      <a href="">
+        <mat-icon>storefront</mat-icon>
+      </a>
+    </button>
+    <button
+      mat-mini-fab
+      matTooltip="Notifications"
+      aria-label="Active notifications"
+    >
+      <a href="">
+        <mat-icon>notifications_active</mat-icon>
+      </a>
+    </button>
+    <button
+      mat-mini-fab
+      matTooltip="Expand more"
+      aria-label="More options"
+    >
+      <a href="">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </a>
+    </button>
+  </div>
+</mat-toolbar>
+

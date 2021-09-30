@@ -1,0 +1,50 @@
+
+
+<main>
+  <h1>Angular Router</h1>
+
+  <button
+    mat-raised-button
+    [matMenuTriggerFor]="menu"
+    fxLayoutAlign="center center"
+    color="primary"
+  >
+    <mat-icon>home</mat-icon>
+    Menu
+  </button>
+  <mat-menu #menu="matMenu">
+    <a
+      mat-menu-item
+      routerLink="/tour-of-heroes/crisis-center"
+      routerLinkActive="active"
+    >
+      Crisis center
+    </a>
+    <a
+      mat-menu-item
+      routerLinkActive="active"
+      routerLink="/tour-of-heroes/heroes"
+    >
+      Heroes
+    </a>
+  </mat-menu>
+  <!--
+    To use the routable animations, wrap the RouterOutlet inside an element, use the @routeAnimation trigger, and bind it to the element.
+  -->
+  <div
+    [@routeAnimation]="getAnimationData(routerOutlet)"
+  >
+    <!--
+      <video #movieplayer=...>
+      Create a local variable ´movieplayer´ that provides access to the 'video' element
+      instance in data-binding and event-binding expressions in the current template.
+      Here:
+        #routerOutlet : create a local variable `routerOutlet` that provides access to the ´router-outlet´ element instance in the expression `getAnimationData(routerOutlet)`
+      For the @routeAnimation transitions to key off states, provide it with the data from the ActivatedRoute. The RouterOutlet is exposed as an outlet template variable, so you bind a reference to the router outlet. This example uses a variable of routerOutlet.
+      The @routeAnimation property is bound to the getAnimationData() with the provided routerOutlet reference
+    -->
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div>
+</main>
+
+

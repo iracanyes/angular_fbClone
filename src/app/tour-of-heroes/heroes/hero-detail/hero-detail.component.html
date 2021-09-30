@@ -1,0 +1,52 @@
+<!-- -->
+
+<main>
+  <div
+    class="card input-container"
+  >
+    <h2>Search for heroes</h2>
+    <!--
+      2-WAY DATA BINDING: [(ngModel)]="hero.name"
+      combine property and event binding in a single notation.
+      Here we use  two-way data binding with the ngModel directive.
+      In two-way binding, a data property value flows to the input box from the component as with property binding. The user's changes also flow back to the component, resetting the property to the latest value, as with event binding.
+
+    <input type="text"  id="hero-name" [(ngModel)]="hero.name"/>
+    -->
+
+    <!-- ATTRIBUTE DIRECTIVES:
+       Alter the appearance or behavior of an existing element.
+       The ngModel directive, which implements two-way data binding, is an example of an attribute directive.
+       "ngModel" modifies the behavior of an existing element (typically <input>) by setting its display value property and responding to change events.
+
+    <input type="text" id="hero-power" [(ngModel)]="hero.power" #ctrl="ngModel">
+    -->
+
+  </div>
+
+  <div
+    *ngIf="hero$ | async as hero"
+  >
+    <h3>{{ hero.name }}</h3>
+    <p>
+      ID: {{ hero.id }}
+    </p>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input
+        type="text"
+        id="hero-name"
+        [(ngModel)]="hero.name"
+      />
+    </div>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="goToHeroes(hero)"
+    >
+      Back
+    </button>
+  </div>
+</main>
+
