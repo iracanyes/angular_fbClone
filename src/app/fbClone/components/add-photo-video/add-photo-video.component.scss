@@ -1,0 +1,78 @@
+@import "src/app/styles/variables";
+
+@media screen and (min-width: 900px) {
+  mat-card{
+    mat-card-header{
+      display: flex;
+      justify-content: center;
+      position: relative;
+      padding: 1rem;
+
+      .mat-card-header-text{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      button.mat-mini-fab{
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        //width: 40px;
+        //height: 40px;
+
+
+
+        mat-icon{
+          //font-size: 18px;
+          //width: 18px;
+          //height: 18px;
+        }
+      }
+    }
+
+    mat-card-content{
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      row-gap: 1rem;
+      div.form-header{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        button{
+          display: flex;
+
+          span{
+            display: flex;
+            align-self: center;
+          }
+        }
+      }
+
+      div.form-content{
+        width: 100%;
+        input{
+          width: 24rem;
+          border-radius: 50px;
+          padding: 0.8rem 1rem;
+        }
+      }
+      // Files input wrapper
+      div.form-files{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $dark-lighter;
+        border-radius: 10px;
+        width: 100%;
+        height: 200px;
+        input.file-input{
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-content>
+    <img mat-card-avatar src="{{ user?.avatar }}" alt="{{ user?.username }}">
+    <form action="">
+      <div class="inputWrapper">
+        <input
+          type="text"
+          name="content"
+          placeholder="Quoi de neuf, {{ user?.username || 'Poto' }}?"
+        >
+        <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-footer>
+    <button mat-button>
+      <mat-icon aria-label="Video camera icon">video_camera_front</mat-icon>
+      <span>Video en direct</span>
+    </button>
+    <button
+      mat-button
+      (click)="openDialog(1)"
+    >
+      <mat-icon aria-label="Video camera icon">collections</mat-icon>
+      <span>Photo/Video</span>
+    </button>
+    <button mat-button>
+      <mat-icon aria-label="Video camera icon">sentiment_very_satisfied</mat-icon>
+      <span>Humeur et activité</span>
+    </button>
+  </mat-card-footer>
+</mat-card>

@@ -1,0 +1,21 @@
+@import "src/app/styles/variables";
+
+mat-list{
+  background-color: $dark;
+  mat-list-item{
+    img{
+      //width: 50px;
+      //height: 50px;
+      //border-radius: 50%;
+    }
+
+    div.mat-line:nth-of-type(1){
+      font-size: 14px;
+      color: $white-light;
+    }
+    div.mat-line:nth-of-type(2){
+      font-size: 11px;
+      color: $primary-color;
+    }
+  }
+}

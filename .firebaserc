@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fbclone-angular-23990": {
+      "hosting": {
+        "fbClone": [
+          "fbclone-angular-23990"
+        ]
+      }
+    }
+  }
+}

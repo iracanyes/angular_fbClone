@@ -1,0 +1,57 @@
+@import "src/app/styles/variables";
+
+mat-card{
+  margin-top: 2rem;
+  mat-card-content{
+    display: flex;
+    flex-direction: row;
+    img.mat-card-avatar{
+      margin-right: 1rem;
+    }
+
+    form{
+      flex: 1;
+      div.inputWrapper{
+        display: flex;
+        flex: 1;
+        position: relative;
+        input{
+          display: flex;
+          flex: 1;
+          padding: 0.8rem 2.1rem;
+          border-radius: 50px;
+          z-index: 1;
+        }
+
+        mat-icon{
+          position: absolute;
+          left: 0.3rem;
+          top: 0.4rem;
+          margin-right: 1rem;
+          font-size: 2rem;
+          color: $dark-lighter;
+          z-index: 2;
+        }
+      }
+
+
+    }
+  }
+  mat-card-footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    button{
+      flex: 1;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+
+      mat-icon{
+        margin-right: 1rem;
+
+      }
+    }
+  }
+}

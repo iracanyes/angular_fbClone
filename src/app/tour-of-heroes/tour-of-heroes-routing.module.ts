@@ -7,6 +7,8 @@ import {TourOfHeroesComponent} from "./tour-of-heroes.component";
 import {CrisisCenterComponent} from "./crisis-center/crisis-center.component";
 import {HeroesComponent} from "./heroes/heroes.component";
 import {CrisisDetailComponent} from "./crisis-center/crisis-detail/crisis-detail.component";
+import {HeroDetailComponent} from "./heroes/hero-detail/hero-detail.component";
+import {HeroListComponent} from "./heroes/hero-list/hero-list.component";
 
 const tourOfHeroesRoutes: Routes = [
   {
@@ -19,8 +21,9 @@ const tourOfHeroesRoutes: Routes = [
       },
       {
         path: 'heroes',
-        component: HeroesComponent
-      }
+        component: HeroListComponent
+      },
+      { path: 'crisis-detail', component: HeroDetailComponent },
     ]
   }
 ];

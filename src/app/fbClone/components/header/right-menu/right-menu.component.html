@@ -1,0 +1,495 @@
+<div
+  fxLayout="row"
+  class="right-menu"
+  #toggleButtonContainer
+>
+  <!-- Profil - Button -->
+  <button
+    mat-button
+    fxLayoutAlign="center center"
+    color="primary"
+    aria-label="Facebook homepage"
+  >
+    <a href="" fxLayout="row">
+      <img src="{{ user.avatar }}" alt="{{ user.username }}" />
+      <span class="">{{ user.username }}</span>
+    </a>
+  </button>
+  <!-- Home - Button -->
+  <button
+    mat-mini-fab
+    matTooltip="Menu"
+    aria-label="Menu"
+    #toggleButton
+    (click)="toggle(1)"
+  >
+    <fa-icon [icon]="faHomeTh"></fa-icon>
+  </button>
+  <mat-card
+    id="right-menu-home"
+    class="sub-menu-home sub-menu"
+    #menu
+    *ngIf="toggler === 1"
+  >
+    <h3>Menu</h3>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-card class="left-card" fxLayout="column">
+        <form class="search-menu">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <fa-icon [icon]="faSearch"></fa-icon>
+            <mat-label>Recherche dans le menu</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+        </form>
+        <mat-nav-list>
+          <div>
+            <h4>Social</h4>
+            <a
+              mat-list-item
+              routerLink="./"
+              fxLayout="row"
+              fxLayoutAlign="center center"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div
+                fxLayout="column"
+              >
+                <h6>Événements</h6>
+                <p>
+                  Trouver des activités et événements auxquels vous pouvez participer
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>people</mat-icon>
+              <div fxLayout="column">
+                <h6>Amis</h6>
+                <p>
+                  Trouvez des amis ou des personnes que vous connaissez.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>groups</mat-icon>
+              <div fxLayout="column">
+                <h6>Groupes</h6>
+                <p>
+                  Entrez en contact avec des personnes qui partagent vos centres d’intérêt.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>date_range</mat-icon>
+              <div fxLayout="column">
+                <h6>Fil d'actualité</h6>
+                <p>
+                  Consultez des publications pertinentes mises en ligne par des personnes et des Pages que vous suivez.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>flag</mat-icon>
+              <div fxLayout="column">
+                <h6>Pages</h6>
+                <p>
+                  Découvrez des entreprises et entrez en contact avec elles sur Facebook.
+                </p>
+              </div>
+            </a>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <h4>Divertissement</h4>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>sports_esports</mat-icon>
+              <div fxLayout="column">
+                <h6>Videos de jeux</h6>
+                <p>
+                  Regardez des parties et suivez les streamers que vous aimez.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Jouer à des jeux</h6>
+                <p>
+                  Jouer à vos jeux favoris
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Watch</h6>
+                <p>
+                  Découvrez des suggestions de vidéos basées sur vos centres d’intérêt et vos contacts.
+                </p>
+              </div>
+            </a>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <h4>Shopping</h4>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Facebook play</h6>
+                <p>
+                  Profitez d’un moyen simple et sécurisé pour effectuer des paiements sur les applications que vous utilisez déjà.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>storefront</mat-icon>
+              <div fxLayout="column">
+                <h6>Marketplace</h6>
+                <p>
+                  Achetez et vendez autour de vous.
+                </p>
+              </div>
+            </a>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <h4>Personnel</h4>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Activités publicitaires récentes</h6>
+                <p>
+                  Retrouvez toutes les annonces avec lesquelles vous avez interagi sur Facebook.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Souvenirs</h6>
+                <p>
+                  Parcourez vos anciennes photos, vidéos et publications sur Facebook.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Enregistrements</h6>
+                <p>
+                  Retrouvez les publications, les photos et les vidéos que vous avez enregistrées pour plus tard.
+                </p>
+              </div>
+            </a>
+            <a
+              mat-list-item
+              href=""
+              fxLayout="row"
+            >
+              <mat-icon>event_available</mat-icon>
+              <div fxLayout="column">
+                <h6>Météo</h6>
+                <p>
+                  Consultez les prévisions météorologiques locales et inscrivez-vous pour recevoir des notifications quotidiennes.
+                </p>
+              </div>
+            </a>
+          </div>
+        </mat-nav-list>
+      </mat-card>
+      <mat-card class="right-card">
+        <h4>Créer</h4>
+        <mat-nav-list>
+          <a mat-list-item href="">
+            <mat-icon>edit</mat-icon>
+            <span>Publication</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>auto_stories</mat-icon>
+            <span>Story</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>event_note</mat-icon>
+            <span>Événements marquants</span>
+          </a>
+          <mat-divider></mat-divider>
+          <a mat-list-item href="">
+            <mat-icon>layers</mat-icon>
+            <span>Page</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>ads_click</mat-icon>
+            <span>Publicité</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>groups</mat-icon>
+            <span>Groupes</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>event_available</mat-icon>
+            <span>Événements</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>storefront</mat-icon>
+            <span>Petite annonces Marketplace</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>info</mat-icon>
+            <span>Collecte d'infos</span>
+          </a>
+          <a mat-list-item href="">
+            <mat-icon>work</mat-icon>
+            <span>offres d'emploi</span>
+          </a>
+        </mat-nav-list>
+      </mat-card>
+    </div>
+
+  </mat-card>
+  <!-- Messenger - Button -->
+  <button
+    mat-mini-fab
+    matTooltip="Expand more"
+    aria-label="More options"
+    #toggleButton
+    (click)="toggle(2)"
+  >
+    <fa-icon [icon]="faMessenger"></fa-icon>
+  </button>
+  <!-- Messenger - Submenu -->
+  <mat-card
+    id="right-menu-messenger"
+    class="sub-menu-home sub-menu"
+    #menu
+    *ngIf="toggler === 2"
+  >
+
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
+      <mat-card-title>Messenger</mat-card-title>
+      <mat-card-actions>
+        <button
+          mat-icon-button
+        >
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>fullscreen</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>video_call</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card-header>
+    <mat-card-content>
+      <form id="search-friends">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Recherche dans Messenger</mat-label>
+          <input matInput placeholder="Find your friends" value="">
+        </mat-form-field>
+      </form>
+      <div id="messenger-user-search">
+        <button mat-card fxLayout="row" fxLayoutAlign="center center">
+          <img mat-card-avatar src="https://loremflickr.com/320/240/dog" />
+          <mat-card-content>
+            <p class="card-title">Username</p>
+            <p class="card-message">
+              Last message send was about a chicken ready to eaten when a cat passed by....
+            </p>
+          </mat-card-content>
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+  <!-- Notifications - Button -->
+  <button
+    mat-mini-fab
+    matTooltip="Notifications"
+    aria-label="Active notifications"
+    (click)="toggle(3)"
+  >
+    <mat-icon>notifications_active</mat-icon>
+  </button>
+  <!-- Notifications - Submenu -->
+  <mat-card
+    id="right-menu-notification"
+    class="sub-menu-home sub-menu"
+    #menu
+    *ngIf="toggler === 3"
+  >
+    <mat-card-header fxLayout="row" fxLayoutAlign="space-between">
+      <mat-card-title>Notifications</mat-card-title>
+      <button
+        mat-mini-fab
+        [matMenuTriggerFor]="notifMenu"
+      >
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #notifMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>done</mat-icon>
+          <span>Tout marquer comme lu</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Paramètrer vos notifications</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>desktop_mac</mat-icon>
+          <span>Ouvrir les notifications</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-card fxLayout="column">
+        <mat-nav-list>
+          <div fxLayout="row">
+            <mat-list-item fxLayoutAlign="center center">
+              <div class="notif_avatar">
+                <img mat-card-avatar src="https://loremflickr.com/320/240/dog" alt="avatar">
+                <mat-icon>celebration</mat-icon>
+              </div>
+
+              <div fxLayout="column" fxLayoutAlign="center">
+                <span class="notif_content">
+                  {{ notifs[0].content }}
+                </span>
+                <span class="notif_date">
+                  <!-- Angular Date Pipe
+                    {{ messages[0].date | date:"fullDate": "UTC":"fr-BE" }}
+                  -->
+                  {{ notifs[0].date }}
+                </span>
+              </div>
+              <mat-icon class="notif_status">
+                radio_button_checked
+              </mat-icon>
+            </mat-list-item>
+
+          </div>
+        </mat-nav-list>
+      </mat-card>
+    </div>
+
+  </mat-card>
+  <!-- More actions - Button -->
+  <button
+    mat-mini-fab
+    matTooltip="Expand more"
+    aria-label="More options"
+    #toggleButton
+    (click)="toggle(4)"
+  >
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+  <!-- More actions - Submenu -->
+  <mat-card
+    id="right-menu-more"
+    class="sub-menu-home sub-menu"
+    #menuMore
+    *ngIf="toggler === 4"
+  >
+    <div id="right-menu-notif_header" fxLayout="row">
+      <img
+        mat-card-avatar
+        src="https://loremflickr.com/320/240"
+        alt="{{ user.username }}"
+      />
+      <div>
+        <mat-card-title>
+          {{ user.username }}
+        </mat-card-title>
+        <button mat-raised-button>
+          <span>Voir le profil</span>
+        </button>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxLayout="row">
+      <fa-icon [icon]="faMessenger"></fa-icon>
+      <div>
+        <mat-card-title>Donner votre avis</mat-card-title>
+        <mat-card-subtitle>
+          Aidez-nous à améliorer la nouvelle version de Facebook.
+        </mat-card-subtitle>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-list fxLayout="column">
+      <button mat-list-item>
+        <mat-icon class="left-icon">settings</mat-icon>
+        <span>Paramètres et confidentialité</span>
+        <mat-icon class="right-icon">chevron_right</mat-icon>
+      </button>
+      <button mat-list-item>
+        <mat-icon class="left-icon">help</mat-icon>
+        <span>Aides et assistances</span>
+        <mat-icon class="right-icon">chevron_right</mat-icon>
+      </button>
+      <button mat-list-item>
+        <mat-icon class="left-icon">brightness_6</mat-icon>
+        <span>Affichage et accessibilité</span>
+        <mat-icon class="right-icon">chevron_right</mat-icon>
+      </button>
+      <button
+        mat-list-item
+        (click)="logout()"
+      >
+        <mat-icon class="left-icon">logout</mat-icon>
+        <span>Se déconnecter</span>
+      </button>
+    </mat-list>
+  </mat-card>
+</div>

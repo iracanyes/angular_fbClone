@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Créer une publication</mat-card-title>
+    <button
+      mat-mini-fab
+      (click)="onNoClick()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="form-header">
+      <img mat-card-avatar src="{{ user?.avatar }}" alt="{{ user?.username }}"/>
+      <div>
+        <p>{{ user?.username }}</p>
+        <button
+          (click)="openDialog()"
+        >
+          <mat-icon>public</mat-icon>
+          <span>{{ post?.visibility }}</span>
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="form-content">
+      <input
+        type="text"
+        name="message"
+        placeholder="Quoi de neuf, {{ user?.username }}?"
+        [(ngModel)]="post.message"
+      />
+    </div>
+    <div
+      matRipple
+      class="form-files"
+      (click)="fileUpload.click()"
+    >
+      <input
+        type="file"
+        class="file-input"
+        multiple
+        accept="image/*, video/*"
+        #fileUpload
+        (change)="onFileSelected($event)"
+      >
+      <mat-icon>collections</mat-icon>
+      <span class="title">Ajouter des photos/videos</span>
+      <span class="subtitle">ou faire glisser-deposer</span>
+    </div>
+  </mat-card-content>
+</mat-card>

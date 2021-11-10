@@ -8,7 +8,7 @@ import { HeroDetailComponent } from "./tour-of-heroes/heroes/hero-detail/hero-de
 import {BrowserModule} from "@angular/platform-browser";
 import {HeroParentComponent} from "./Introduction/Component/ComponentInteraction/hero-parent.component";
 import { AppDevComponent } from "./app-dev.component";
-import {HomepageComponent} from "./fbClone/homepage/homepage.component";
+import {HomepageComponent} from "./fbClone/pages/homepage/homepage.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {TourOfHeroesComponent} from "./tour-of-heroes/tour-of-heroes.component";
 
@@ -18,13 +18,19 @@ const routes: Routes = [
   { path: 'dev', component: AppDevComponent },
   {
     path: 'tour-of-heroes',
+    loadChildren: () => import('./tour-of-heroes/tour-of-heroes.module')
+      .then(m => m.TourOfHeroesModule)
+  },
+  /*
+  {
+    path: 'tour-of-heroes',
     component: TourOfHeroesComponent,
     children: [
       { path: 'heroes', component: HeroListComponent },
-      { path: 'crisis-detail', component: HeroDetailComponent },
+
     ]
   },
-
+  */
   {
     path: 'intro/component/component-interaction',
     component: HeroParentComponent
@@ -35,7 +41,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forRoot(routes, { enableTracing: false })
   ],
   exports: [RouterModule]
 })

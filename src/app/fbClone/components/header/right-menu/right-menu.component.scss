@@ -1,0 +1,237 @@
+@import "~src/app/styles/variables";
+
+/* Right menu - submenu */
+
+.right-menu .mat-button{
+  border-radius: 50px;
+  padding-left: 2px;
+  background-color: #4E4F50;
+  margin-right: 5px;
+}
+.right-menu .mat-button img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.right-menu .mat-button a{
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.right-menu .mat-mini-fab{
+  margin-right: 10px;
+  background-color: #4E4F50;
+}
+
+/* Icon Facebook Messenger */
+.right-menu button.mat-mini-fab fa-icon{
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: #f0f3f6;
+}
+
+.right-menu .mat-icon{
+  color: #E4E6EB;
+}
+
+
+.right-menu mat-menu{
+  width: 250px;
+}
+
+/* Submenu - global style */
+.sub-menu{
+  background-color: #323436;
+}
+.sub-menu mat-card{
+  background-color: #242526;
+}
+.sub-menu mat-card:nth-of-type(1){
+  margin-right: 10px;
+}
+
+/* Submenu : Home - Style */
+.sub-menu-home{
+  position: absolute;
+  right: 0px;
+  top: 128px;
+}
+
+.sub-menu-home .left-card{
+  width: 360px;
+}
+.sub-menu-home .left-card a{
+  height: unset;
+}
+
+.sub-menu-home mat-card.left-card mat-icon{
+  margin-right: 10px;
+}
+.sub-menu-home mat-card.left-card p{
+  line-height: 14px;
+  font-size: 12px;
+  overflow-wrap: normal;
+  height: 48px;
+  text-align: justify;
+  text-justify: inter-word;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.sub-menu-home  .mat-list-base .mat-list-item .mat-list-item-content{
+  width: inherit;
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+
+}
+.sub-menu-home .left-card mat-icon{
+  font-size: 40px;
+  line-height: 32px;
+  width: 40px;
+  height: 50px;
+}
+/* End Submenu : Home - Style */
+
+/* Submenu : Messenger - Style */
+
+#right-menu-messenger{
+  form#search-friends{
+    mat-form-field.mat-form-field{
+      width: 100%;
+    }
+  }
+
+  #messenger-user-search button{
+    background-color: transparent;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px $dark-lighter solid;
+    padding: 10px 10px;
+
+    &:hover{
+      background-color: $dark;
+    }
+
+    img{
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    p.card-title{
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    p.card-message{
+
+    }
+
+    mat-icon{
+      font-size: 34px;
+      font-weight: bold;
+      width: 50px;
+      height: 100%;
+      text-align: center;
+    }
+  }
+
+}
+/* End Submenu : Messenger - Style */
+
+/* Submenu : Notifications - Style */
+#right-menu-notification{
+  width: 450px;
+  mat-list-item{
+    height: unset;
+    .notif_avatar{
+      position: relative;
+      margin-right: 1rem;
+
+      mat-icon{
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+      }
+    }
+
+    span.notif_content{
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1rem;
+      white-space: normal;
+    }
+
+    span.notif_date{
+      font-size: 12px;
+      font-weight: normal;
+      color: $blue-light;
+    }
+
+    mat-icon.notif_status{
+      margin-left: 1rem;
+    }
+
+  }
+}
+/* End Submenu : Notifications - Style */
+
+/* Submenu : More options - Style */
+#right-menu-more{
+  div#right-menu-notif_header{
+    img{
+      width: 42px;
+      height: 42px;
+      margin-right: 1rem;
+    }
+
+    mat-card-title{
+      font-size: 16px;
+      margin-bottom: unset;
+    }
+
+    button{
+      padding: 0.2rem 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  // Facebook icon
+  fa-icon{
+    font-size: 36px;
+    align-self: center;
+    margin-right: 1rem;
+  }
+  mat-card-title{
+    font-size: 14px;
+  }
+  mat-card-subtitle{
+    font-size: 12px;
+  }
+  mat-list{
+    button.mat-list-item{
+      background-color: $dark-light;
+      justify-content: space-between;
+      border: none;
+      &:hover{
+        background-color: $dark-lighter;
+      }
+      span{
+        display: flex;
+        flex: 1;
+      }
+      mat-icon.left-icon{
+        margin-right: 1rem;
+        align-self: center;
+      }
+      mat-icon.right-icon{
+        align-self: center;
+      }
+    }
+  }
+}
+/* Submenu : More options  - Style */

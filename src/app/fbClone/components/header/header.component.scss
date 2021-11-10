@@ -1,0 +1,47 @@
+mat-toolbar{
+  .div-divider{
+    flex: 1 1 auto;
+  }
+
+  .main-logo{
+    font-size: 43px !important;
+    width: 43px;
+    height: 43px;
+    color: #1976d2;
+    border-radius: 50%;
+    background-color: #f0f3f6;
+    margin-right: 1rem;
+  }
+
+
+
+  button.mat-mini-fab{
+    margin-right: 0.2rem;
+  }
+  .mat-form-field-label{
+    font-size: 0.8rem;
+  }
+
+
+  div.menu{
+    button{
+      margin: 2rem 2rem;
+    }
+
+    i.bi{
+      align-self: center;
+    }
+    .mat-icon, i.bi{
+      font-size: 32px;
+      width: 32px;
+      //height: 40px;
+      color: #f0f3f6;
+    }
+  }
+}
+
+
+
+
+
+

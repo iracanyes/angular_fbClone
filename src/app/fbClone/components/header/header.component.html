@@ -1,0 +1,87 @@
+<mat-toolbar id="main-toolbar">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <!-- Main Logo -->
+    <mat-icon
+      class="main-logo"
+    >
+      facebook
+    </mat-icon>
+    <!-- Main Logo -->
+
+    <!-- Search input with search icon to show input -->
+    <form id="main-toolbar-search" class="" action="">
+      <div id="search-on-facebook">
+        <i class="bi bi-search"></i>
+        <input
+          matInput
+          type="text"
+          placeholder="Rechercher sur Facebook"
+          value=""
+        >
+      </div>
+    </form>
+  </div>
+
+  <div class="div-divider"></div>
+  <!-- Menu (home, watch, marketplace, groupes, plus) -->
+  <div class="menu">
+    <button
+      mat-icon-button
+      matTooltip="Home"
+      aria-hidden="false"
+      aria-label="Facebook homepage"
+    >
+      <a href="/">
+        <i class="bi bi-house"></i>
+        <!--
+        <mat-icon class="material-icons-round">
+          home
+        </mat-icon>
+        -->
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Watch"
+      aria-hidden="false"
+      aria-label="Watch videos"
+    >
+      <a href="">
+        <i class="bi bi-display"></i>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Marketplace"
+      aria-label="Marketplace"
+    >
+      <a href="">
+        <i class="bi bi-shop-window"></i>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Groups"
+      aria-label="Groups"
+    >
+      <a href="">
+        <mat-icon>groups</mat-icon>
+      </a>
+    </button>
+    <button
+      mat-icon-button
+      matTooltip="Gaming"
+      aria-label="Gaming"
+    >
+      <a href="">
+        <i class="bi bi-controller"></i>
+      </a>
+    </button>
+  </div>
+  <!-- End Menu (home, watch, marketplace, groupes, plus) -->
+  <div class="div-divider"></div>
+  <!-- Right icon Menu (create, messenger, notifications, plus)  -->
+  <fb-header-right-menu></fb-header-right-menu>
+
+</mat-toolbar>
+

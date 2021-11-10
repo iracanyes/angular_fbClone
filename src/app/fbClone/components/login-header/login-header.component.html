@@ -1,0 +1,61 @@
+<mat-toolbar id="signin-header">
+  <div class="wrapper">
+    <span class="logo">Facebook</span>
+    <button
+      mat-raised-button
+      color="primary"
+      routerLink="/sign-up"
+      *ngIf="!isSignUpPage"
+    >
+      Inscrire
+    </button>
+    <div class="spacer"></div>
+    <form
+      class="header-form"
+      fxLayout="row"
+      autocomplete="on"
+      (ngSubmit)="login()"
+    >
+      <div fxLayout="column" class="input-wrapper" appearance="fill">
+        <label>Adresse e-mail ou mobile</label>
+        <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="(emailFormControl.dirty || passwordFormControl.dirty) && emailFormControl.hasError('required')">
+          Email/phone is <strong>required</strong>
+        </mat-error>
+      </div>
+      <div fxLayout="column" class="input-wrapper password-wrapper" appearance="fill">
+        <label>Mot de passe</label>
+        <input
+          type="{{ !hide ? 'text' : 'password' }}"
+          name="password"
+          matInput
+          [formControl]="passwordFormControl"
+          placeholder="************"
+        />
+        <mat-icon
+          matSuffix
+          (click)="hide = !hide"
+        >
+          {{ hide ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <mat-error *ngIf="passwordFormControl.dirty && passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="(emailFormControl.dirty || passwordFormControl.dirty) && emailFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </div>
+    </form>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      (click)="login()"
+    >
+      Connexion
+    </button>
+  </div>
+</mat-toolbar>

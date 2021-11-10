@@ -1,0 +1,76 @@
+<fb-login-header></fb-login-header>
+<main>
+  <div class="main-wrapper">
+    <mat-card id="card-title">
+      <mat-card-title>Facebook</mat-card-title>
+      <mat-card-subtitle>Facebook helps you connected with people in your area</mat-card-subtitle>
+    </mat-card>
+    <mat-card id="card-form">
+      <mat-card-title>Se connecter à facebook</mat-card-title>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="{{ hide ? 'password' : 'text' }}" matInput [formControl]="passwordFormControl" placeholder="Ex. pat@example.com">
+          <mat-icon
+            matSuffix
+            (click)="hide = !hide"
+          >
+            {{ hide ? 'visibility' : 'visibility_off'}}
+          </mat-icon>
+          <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+            Please enter a valid password
+          </mat-error>
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="login()"
+        >
+          Connexion
+        </button>
+      </form>
+      <div class="divider"></div>
+      <div class="button-wrapper">
+        <button
+          mat-raised-button
+          class="google"
+          (click)="loginWithGoogle()"
+        >
+          <i antIcon type="google-circle-fill"></i>
+          <span>Google</span>
+        </button>
+        <button
+          mat-raised-button class="amazon"
+          (click)="loginWithTwitter()"
+        >
+          <i antIcon type="amazon-circle-fill"></i>
+          <span>Twitter</span>
+        </button>
+        <button
+          mat-raised-button class="yahoo"
+          (click)="loginWithFacebook()"
+        >
+          <i antIcon type="yahoo-fill"></i>
+          <span>Facebook</span>
+
+        </button>
+      </div>
+    </mat-card>
+  </div>
+
+</main>
+
+

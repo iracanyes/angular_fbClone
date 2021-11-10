@@ -1,0 +1,104 @@
+@import "src/app/styles/variables";
+
+main{
+  width: 900px;
+  height: 100vh;
+  margin: 0 auto;
+
+  div.main-wrapper{
+    display: flex;
+    width: 100%;
+    margin: 10vh auto;
+    flex-direction: row;
+    mat-card{
+      display: flex;
+      flex: 1;
+    }
+    mat-card#card-title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: left;
+      padding: 1rem;
+      mat-card-title{
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: $primary-color;
+        align-self: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      mat-card-subtitle{
+        font-size: 18px;
+        align-self: flex-start;
+      }
+    }
+
+    mat-card#card-form{
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      form{
+        display: flex;
+        flex-direction: column;
+
+        mat-form-field{
+          margin-bottom: 1rem;
+        }
+      }
+
+      div.divider{
+        width: 80%;
+        margin: 1rem auto;
+        border: 1px solid $primary-color;
+      }
+
+      div.button-wrapper{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+        margin-top: 1rem;
+
+        button{
+          width: 200px;
+          display: flex;
+          justify-content: center;
+          margin: 0.5rem auto;
+          padding: 0.2rem 0;
+          i{
+            font-size: 24px;
+            color: $white-light;
+            margin: 0.5rem 0.5rem;
+          }
+
+
+        }
+
+        button.google{
+          background-color: #1A73E8;
+        }
+
+        button.amazon{
+          background-color: #ff9900;
+        }
+
+        button.yahoo{
+          background-color: #6001D2;
+        }
+      }
+
+
+
+      div.button-group{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,45 @@
+/*- Custom styles
+  As each component is isolated with their style's files.
+  Modification to material component style (third-parties librairies) must be added to this styles.scss file
+  for angular to not add a hashname to isolate the style
+-*/
+
+mat-toolbar#main-toolbar{
+  form#main-toolbar-search{
+    // Form Search in facebook
+    div#search-on-facebook{
+      position: relative;
+
+      i{
+        position: absolute;
+        left: 0.6rem;
+        bottom: 0.4rem;
+      }
+
+      input{
+        font-size: 14px;
+        padding: 0.8rem 0.5rem 0.8rem 2.4rem;
+        border-radius: 50px;
+        border: 1px solid $dark-lighter;
+        background-color: $dark-lighter;
+      }
+    }
+
+
+  }
+}
+
+/*- Header - Right menu -*/
+#right-menu-messenger{
+  form#search-friends{
+    .mat-form-field-appearance-fill {
+      .mat-form-field-flex{
+        border-radius: 20px !important;
+      }
+
+      .mat-form-field-underline{
+        display: none;
+      }
+    }
+  }
+}

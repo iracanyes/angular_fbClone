@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import "@angular/common/locales/global/fr";
+import "@angular/common/locales/global/fr-BE";
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './app.component';
@@ -17,15 +19,21 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {TourOfHeroesModule} from "./tour-of-heroes/tour-of-heroes.module";
-import {MainMenuComponent} from "./navigation/main-menu.component";
+import {HeaderComponent} from "./navigation/header/header.component";
 import {FbCloneModule} from "./fbClone/fb-clone.module";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { IconModule } from "@ant-design/icons-angular";
+import {environment} from "../environments/environment";
 
 @NgModule({
   /* Déclare les composants directives et pipes qui appartiennent à ce  module
    */
   declarations: [
     AppComponent,
-    MainMenuComponent,
+    HeaderComponent,
     AppDevComponent,
     HeroParentComponent,
     HeroChildComponent,
@@ -39,6 +47,9 @@ import {FbCloneModule} from "./fbClone/fb-clone.module";
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -48,6 +59,7 @@ import {FbCloneModule} from "./fbClone/fb-clone.module";
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    IconModule,
     TourOfHeroesModule,
     FbCloneModule,
     /*
@@ -56,6 +68,7 @@ import {FbCloneModule} from "./fbClone/fb-clone.module";
      * it must be placed at last position.
      */
     AppRoutingModule,
+    FontAwesomeModule,
   ],
   /* Creators of services that this NgModule contributes to the global collection of services;
   they become accessible in all parts of the application.
