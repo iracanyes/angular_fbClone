@@ -24,10 +24,9 @@ export interface User {
 }
 
 export interface Post {
-  title: string;
   message: string;
-  files: File[];
-  filesUrl?: string[];
+  images?: string[];
+  video?: string;
   activities?: string[];
   visibility: string;
 }

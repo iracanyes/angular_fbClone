@@ -27,6 +27,7 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { IconModule } from "@ant-design/icons-angular";
 import {environment} from "../environments/environment";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 
 @NgModule({
   /* Déclare les composants directives et pipes qui appartiennent à ce  module
@@ -50,6 +51,7 @@ import {environment} from "../environments/environment";
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,

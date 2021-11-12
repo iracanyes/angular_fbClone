@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Post, User} from "../../../../types/interfaces";
 import {SelectPostVisibilityComponent} from "../select-post-visibility/select-post-visibility.component";
+import {FileUploadService} from "../../../../services/FileUploadService";
 
 interface DialogData {
   user: User
@@ -19,14 +20,14 @@ export class AddPhotoVideoComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<AddPhotoVideoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private fileUploadService: FileUploadService
   ) {
     this.user = data.user;
     this.post = {
-      title: '',
       message: '',
-      files: [],
-      filesUrl: [''],
+      images: [],
+      video: '',
       visibility: 'Public'
     };
   }
@@ -42,8 +43,24 @@ export class AddPhotoVideoComponent implements OnInit {
   onFileSelected(e: Event): void
   {
     const input = e.currentTarget as HTMLInputElement;
-    if(input?.files?.length ){
+    if(input?.files && input?.files?.length > 1 ){
       console.log("onFileSelected e.target.files",  input?.files);
+      const files = input.files;
+
+      if(files.length === 1 && (files[0].type.match("/[image|video]\//"))){
+       return;
+      }
+
+      for(let i=0; i < files.length; i++){
+        const file = files.item(i);
+        file && console.log(`${ file.name } - ${ file.type }`);
+        if(!file?.type.includes('image/')){
+          return;
+        }
+
+        this.fileUploadService.uploadImage(file);
+
+      }
     }
 
 

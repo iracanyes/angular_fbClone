@@ -49,16 +49,14 @@ export class AuthService{
         this.user && this.user.subscribe(user => {
           user && localStorage.setItem('user', JSON.stringify(user));
         });
-        //JSON.parse(<string>localStorage.getItem('user'));
       }else{
         localStorage.removeItem('user');
-        //JSON.parse(<string>localStorage.getItem('user'));
       }
     });
   }
 
   isAuthenticated(): boolean{
-    return true;
+    return localStorage.getItem('user') !== null ;
   }
 
   login(email: string, password: string){
